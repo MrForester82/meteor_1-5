@@ -5,15 +5,19 @@
     <input type="checkbox" checked="{{checked}}" class="toggle-checked" />
 
     {{#if isOwner}}
-      <button class="toggle-private">
-        {{#if private}}
-          Private
+		{{#if private}}
+			<button class="toggle-private red bigrounded" >
+				Приватно
+			</button>
         {{else}}
-          Public
+			<button class="toggle-private green bigrounded">
+				Публично
+			</button>
         {{/if}}
-      </button>
+      
     {{/if}}
  
     <span class="text"><strong>{{username}}</strong> - {{text}}</span>
+	<span class="text"><strong>Описание</strong> - {{description}}</span>
   </li>
 </template>

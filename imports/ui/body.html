@@ -1,20 +1,20 @@
 <body>
   <div class="container">
     <header>
-      <h1>Todo List</h1>
-    </header>
-    <h1>Todo List ({{incompleteCount}})</h1>
-
-    <label class="hide-completed">
+      <h1>Ежедневник</h1>
+	  {{> loginButtons}}
+	  <h5>Не выполненных задач: {{incompleteCount}}</h5>
+	  <label class="hide-completed">
         <input type="checkbox" />
-        Hide Completed Tasks
+        Скрыть выполненные задачи
     </label>
-
-    {{> loginButtons}}
-
+    </header>
+    
     {{#if currentUser}}
         <form class="new-task">
-          <input type="text" name="text" placeholder="Type to add new tasks" />
+          <input type="text" name="text" placeholder="Введите новую задачу" />
+		  <textarea name="discription" placeholder="Описание" cols="50" rows="6"></textarea>
+		  <input type="submit" class="red bigrounded" value="Добавить" />
         </form>
     {{/if}}
  
