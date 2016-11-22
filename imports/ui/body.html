@@ -8,17 +8,18 @@
         <input type="checkbox" />
         Скрыть выполненные задачи
     </label>
+		
+		{{#if currentUser}}
+			<form class="new-task">
+				<input type="text" name="text" placeholder="Введите новую задачу" />
+				<input type="text" name="description" placeholder="Описание" />
+				<input type="date" name="date" />
+				<!--<textarea name="discription" placeholder="Описание" cols="50" rows="6"></textarea>-->
+				<input type="submit" class="red bigrounded cent" value="Добавить" />
+			</form>
+		{{/if}}
+	
     </header>
-    
-    {{#if currentUser}}
-        <form class="new-task">
-          <input type="text" name="text" placeholder="Введите новую задачу" />
-		  <input type="text" name="description" placeholder="Описание" />
-		  <input type="date" name="date" />
-		  <!--<textarea name="discription" placeholder="Описание" cols="50" rows="6"></textarea>-->
-		  <input type="submit" class="red bigrounded" value="Добавить" />
-        </form>
-    {{/if}}
  
     <ul>
       {{#each tasks}}

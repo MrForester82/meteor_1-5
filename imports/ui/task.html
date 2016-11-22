@@ -1,24 +1,27 @@
 <template name="task">
   <li class="{{#if checked}}checked{{/if}} {{#if private}}private{{/if}}">
     <button class="delete">&times;</button>
- 
-    <input type="checkbox" checked="{{checked}}" class="toggle-checked" />
+	
+	<div class="container">
+		<input type="checkbox" checked="{{checked}}" class="toggle-checked" />
 
-    {{#if isOwner}}
-		{{#if private}}
-			<button class="toggle-private red bigrounded" >
-				Приватно
-			</button>
-        {{else}}
-			<button class="toggle-private green bigrounded">
-				Публично
-			</button>
-        {{/if}}
-      
-    {{/if}}
+		{{#if isOwner}}
+			{{#if private}}
+				<button class="toggle-private red bigrounded" >
+					Приватно
+				</button>
+			{{else}}
+				<button class="toggle-private green bigrounded">
+					Публично
+				</button>
+			{{/if}}
+		{{/if}}
  
-    <span class="text"><strong>{{username}}</strong> - {{text}}</span>
-	<span class="text"><strong>Выполнить до</strong> - {{date}}</span>
-	<span class="text"><strong>Описание</strong> - {{description}}</span>
+		<span class="text"><strong>{{username}}</strong> - {{text}}</span>
+		<span class="text">{{date}}</span>
+	</div>
+	<div class="container">
+		<span class="text">{{description}}</span>
+	</div>
   </li>
 </template>

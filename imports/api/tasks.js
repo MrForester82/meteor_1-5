@@ -25,7 +25,11 @@ Meteor.methods({
  
     // Make sure the user is logged in before inserting a task
     if (! this.userId) {
-      throw new Meteor.Error('not-authorized');
+      throw new Meteor.Error('Авторизуйтесь');
+    }
+	
+	if (! text) {
+      throw new Meteor.Error('Введите название задачи');
     }
  
     Tasks.insert({
